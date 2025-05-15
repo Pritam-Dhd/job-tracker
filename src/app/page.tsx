@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Logo from "../../public/logo.png";
-import LandingImg from "../../public/job-tracker.jpg";
+import Logo from "@/assets/logo.png";
+import LandingImg from "@/assets/job-tracker.jpg";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
