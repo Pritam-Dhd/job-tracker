@@ -3,12 +3,31 @@ import Logo from "@/assets/logo.png";
 import LandingImg from "@/assets/job-tracker.jpg";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import ThemeToggle from "@/components/ThemeToggle";
+import {
+  SignInButton,
+  SignUpButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+} from "@clerk/nextjs";
 
 export default function Home() {
   return (
     <main>
-      <header className="max-w-7xl mx-auto px-4 sm:px-8 py-6">
+      <header className="flex max-w-7xl mx-auto px-4 sm:px-8 py-6 justify-between items-center">
         <Image src={Logo} alt="logo" width={300} className="max-w-xs" />
+
+        <div className="flex justify-end items-center p-4 gap-4 h-16">
+          <ThemeToggle />
+          <SignedOut>
+            <SignInButton />
+            <SignUpButton />
+          </SignedOut>
+          <SignedIn>
+            <UserButton />
+          </SignedIn>
+        </div>
       </header>
 
       <section className="max-w-7xl mx-auto px-4 sm:px-8 h-screen -mt-20 grid lg:grid-cols-[1fr_600px] items-center">
